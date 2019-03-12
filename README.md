@@ -39,8 +39,7 @@ To use this app you need Java Runtime Environment installed. You can download it
 
 `sudo apt-get install default-jre`
 
-This project depends:
-	* ini4j You can download it on [their SourceForge](http://ini4j.sourceforge.net/)
+This project depends ini4j You can download it on [their SourceForge](http://ini4j.sourceforge.net/)
 
 Some feathures:
 ---

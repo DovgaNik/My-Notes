@@ -54,8 +54,8 @@ public Frame() {
         jMI_Open_Config = new javax.swing.JMenuItem();
         jMI_Save_Config = new javax.swing.JMenuItem();
         jM_Help = new javax.swing.JMenu();
-        jMI_Info = new javax.swing.JMenuItem();
         jMI_ReadMe = new javax.swing.JMenuItem();
+        jMI_Info = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Note");
@@ -153,15 +153,6 @@ public Frame() {
 
         jM_Help.setText("Help");
 
-        jMI_Info.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
-        jMI_Info.setText("Info");
-        jMI_Info.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMI_InfoActionPerformed(evt);
-            }
-        });
-        jM_Help.add(jMI_Info);
-
         jMI_ReadMe.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
         jMI_ReadMe.setText("ReadMe");
         jMI_ReadMe.addActionListener(new java.awt.event.ActionListener() {
@@ -170,6 +161,15 @@ public Frame() {
             }
         });
         jM_Help.add(jMI_ReadMe);
+
+        jMI_Info.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
+        jMI_Info.setText("Info");
+        jMI_Info.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMI_InfoActionPerformed(evt);
+            }
+        });
+        jM_Help.add(jMI_Info);
 
         jMenuBar1.add(jM_Help);
 
@@ -273,7 +273,7 @@ public Frame() {
     private void jMI_InfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMI_InfoActionPerformed
         //Info
         jL_Out.setText("Loading information...");
-        jT_Note.setText("\t\t\tCopyright DovgaNik 2018-2019©\n\n\t\t\t        Version:2.0.0.0\n" + "Changelog: \n\n" + "1.0.0.1:\n Added info button;\n\n1.0.1.1:\nFixed bug with 'null';\nFixed bug with lines;\n\n1.0.1.2:\nAdded changelog;\n\n1.0.2.2:\nAdd autoreading;\n\n1.1.0.0:\nWrite and read functions branched into different files in another package;\n\n1.1.0.1:\nAdded printing function;\n\n2.0.0.0:\n" + "Changed GUI;\n" + "Added text search;\n" + "Added config file;\n" + "Added menu bar;");
+        jT_Note.setText("\t\tCopyright DovgaNik 2018-2019© GitHub:https://github.com/DovgaNik/My-Notes\n\n\t\t\t        Version:2.0.0.1\n" + "Changelog: \n\n" + "1.0.0.1:\n Added info button;\n\n1.0.1.1:\nFixed bug with 'null';\nFixed bug with lines;\n\n1.0.1.2:\nAdded changelog;\n\n1.0.2.2:\nAdd autoreading;\n\n1.1.0.0:\nWrite and read functions branched into different files in another package;\n\n1.1.0.1:\nAdded printing function;\n\n2.0.0.0:\n" + "Changed GUI;\n" + "Added text search;\n" + "Added config file;\n" + "Added menu bar;\n\n" + "2.0.0.1:\n" + "Added ReadMe file;\n" + "Added project to the GitHub;");
     }//GEN-LAST:event_jMI_InfoActionPerformed
 
     private void jMI_Open_ConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMI_Open_ConfigActionPerformed
@@ -287,7 +287,58 @@ public Frame() {
     }//GEN-LAST:event_jMI_Save_ConfigActionPerformed
 
     private void jMI_ReadMeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMI_ReadMeActionPerformed
-        // TODO add your handling code here:
+        jL_Out.setText("Loading ReadMe...");
+        jT_Note.setText(
+            // <editor-fold defaultstate="collapsed" desc="ReadMe">                
+    "You can view the whole ReadMe file on https://github.com/DovgaNik/My-Notes\n\n" + "What is this programm for ?\n" +
+    "---\n" +
+    "This program is a simple and lightweight note taking app written on Java.\n" +
+    "\n" +
+    "How can I use it?\n" +
+    "---\n" +
+    "There are:\n" +
+    "\n" +
+    "1. Text areas\n" +
+    "\n" +
+    "    * Text area with your note\n" +
+    "    * Seach area (config file will appear here)\n" +
+    "\n" +
+    "2. Labels\n" +
+    "\n" +
+    "    * Big one in the bottom of the window (errors and information about file operations will appear here)\n" +
+    "    * Small one \n" +
+    "\n" +
+    "3. Menu (It contains some submenus)\n" +
+    "\n" +
+    "    * File\n" +
+    "        * Read (Ctrl-O)\n" +
+    "        * Write (Ctrl-S)\n" +
+    "    * Edit\n" +
+    "        * Clean (Ctrl-C)\n" +
+    "        * Find (Ctrl-F)\n" +
+    "        * Print (Ctrl-P)\n" +
+    "    * Tools\n" +
+    "        * Open config\n" +
+    "        * Save config\n" +
+    "    * Help\n" +
+    "        * Readme (F1)\n" +
+    "        * Info (F2)\n" +
+    "\n" +
+    "To use this app you need Java Runtime Environment installed. You can download it on the [official site](https://java.com/ru/download/) or if you're using Ubuntu \n" +
+    "\n" +
+    "`sudo apt-get install default-jre`\n" +
+    "\n" +
+    "This project depends ini4j You can download it on [their SourceForge](http://ini4j.sourceforge.net/)\n" +
+    "\n" +
+    "Some feathures:\n" +
+    "---\n" +
+    "\n" +
+    "* Search (to use search enter search phrase into search text area and go to Edit --> Find or Ctrl-F)\n" +
+    "* Print (to print text go to Edit --> Print Ctrl-P)\n" +
+    "    \n" +
+    ""
+// </editor-fold>
+        );
     }//GEN-LAST:event_jMI_ReadMeActionPerformed
     
     public static void main(String args[]) {
