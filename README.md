@@ -16,7 +16,7 @@ There are:
 
 2. Labels
 
-    * Big one in the bottom of the window (errors           and information about file operations will appear here)
+    * Big one in the bottom of the window (errors and information about file operations will appear here)
     * Small one 
 
 3. Menu (It contains some submenus)
@@ -38,6 +38,9 @@ There are:
 To use this app you need Java Runtime Environment installed. You can download it on the [official site](https://java.com/ru/download/) or if you're using Ubuntu 
 
 `sudo apt-get install default-jre`
+
+This project depends:
+	* ini4j You can download it on [their SourceForge](http://ini4j.sourceforge.net/)
 
 Some feathures:
 ---
