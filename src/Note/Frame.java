@@ -255,10 +255,16 @@ public Frame() {
     }//GEN-LAST:event_jMI_WriteActionPerformed
 
     private void jMI_FindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMI_FindActionPerformed
-        if(jT_Note.getText().contains(jT_Find.getText())){
-            jT_Find.setText("Contains");
-        }else{
-            jT_Find.setText("Not contains");
+        int i = 0;
+        String search_phrase = jT_Find.getText();
+        String [] lines = jT_Note.getText().split("\n", 10000);
+        boolean [] lines_contains;
+        jT_Find.setText(null);
+        while(i < 10000){
+            if(lines [i].contains(search_phrase)){
+                jT_Find.setText(jT_Find.getText() + search_phrase + " is on " + i + "\n");    
+            }
+            i++;
         }
     }//GEN-LAST:event_jMI_FindActionPerformed
 
@@ -273,7 +279,7 @@ public Frame() {
     private void jMI_InfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMI_InfoActionPerformed
         //Info
         jL_Out.setText("Loading information...");
-        jT_Note.setText("\t\tCopyright DovgaNik 2018-2019© GitHub:https://github.com/DovgaNik/My-Notes\n\n\t\t\t        Version:2.0.0.1\n" + "Changelog: \n\n" + "1.0.0.1:\n Added info button;\n\n1.0.1.1:\nFixed bug with 'null';\nFixed bug with lines;\n\n1.0.1.2:\nAdded changelog;\n\n1.0.2.2:\nAdd autoreading;\n\n1.1.0.0:\nWrite and read functions branched into different files in another package;\n\n1.1.0.1:\nAdded printing function;\n\n2.0.0.0:\n" + "Changed GUI;\n" + "Added text search;\n" + "Added config file;\n" + "Added menu bar;\n\n" + "2.0.0.1:\n" + "Added ReadMe file;\n" + "Added project to the GitHub;");
+        jT_Note.setText("\t\tCopyright DovgaNik 2018-2019© GitHub:https://github.com/DovgaNik/My-Notes\n\n\t\t\t        Version:2.0.2.0\n" + "Changelog: \n\n" + "1.0.0.1:\n Added info button;\n\n1.0.1.1:\nFixed bug with 'null';\nFixed bug with lines;\n\n1.0.1.2:\nAdded changelog;\n\n1.0.2.2:\nAdd autoreading;\n\n1.1.0.0:\nWrite and read functions branched into different files in another package;\n\n1.1.0.1:\nAdded printing function;\n\n2.0.0.0:\n" + "Changed GUI;\n" + "Added text search;\n" + "Added config file;\n" + "Added menu bar;\n\n" + "2.0.0.1:\n" + "Added ReadMe file;\n" + "Added project to the GitHub;\n\n" + "2.0.2.0\n" + "Added advanced serch;");
     }//GEN-LAST:event_jMI_InfoActionPerformed
 
     private void jMI_Open_ConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMI_Open_ConfigActionPerformed
