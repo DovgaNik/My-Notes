@@ -42,7 +42,7 @@ public Frame() {
         jT_Note = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         jT_Find = new javax.swing.JTextArea();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        jMB = new javax.swing.JMenuBar();
         jM_File = new javax.swing.JMenu();
         jMI_Read = new javax.swing.JMenuItem();
         jMI_Write = new javax.swing.JMenuItem();
@@ -98,7 +98,7 @@ public Frame() {
         });
         jM_File.add(jMI_Write);
 
-        jMenuBar1.add(jM_File);
+        jMB.add(jM_File);
 
         jM_Edit.setText("Edit");
 
@@ -129,7 +129,7 @@ public Frame() {
         });
         jM_Edit.add(jMI_Print);
 
-        jMenuBar1.add(jM_Edit);
+        jMB.add(jM_Edit);
 
         jM_Tools.setText("Tools");
 
@@ -149,7 +149,7 @@ public Frame() {
         });
         jM_Tools.add(jMI_Save_Config);
 
-        jMenuBar1.add(jM_Tools);
+        jMB.add(jM_Tools);
 
         jM_Help.setText("Help");
 
@@ -171,9 +171,9 @@ public Frame() {
         });
         jM_Help.add(jMI_Info);
 
-        jMenuBar1.add(jM_Help);
+        jMB.add(jM_Help);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(jMB);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -255,6 +255,7 @@ public Frame() {
     }//GEN-LAST:event_jMI_WriteActionPerformed
 
     private void jMI_FindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMI_FindActionPerformed
+        //Search
         int i = 0;
         String search_phrase = jT_Find.getText();
         String [] lines = jT_Note.getText().split("\n", 10000);
@@ -279,7 +280,12 @@ public Frame() {
     private void jMI_InfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMI_InfoActionPerformed
         //Info
         jL_Out.setText("Loading information...");
-        jT_Note.setText("\t\tCopyright DovgaNik 2018-2019© GitHub:https://github.com/DovgaNik/My-Notes\n\n\t\t\t        Version:2.0.2.0\n" + "Changelog: \n\n" + "1.0.0.1:\n Added info button;\n\n1.0.1.1:\nFixed bug with 'null';\nFixed bug with lines;\n\n1.0.1.2:\nAdded changelog;\n\n1.0.2.2:\nAdd autoreading;\n\n1.1.0.0:\nWrite and read functions branched into different files in another package;\n\n1.1.0.1:\nAdded printing function;\n\n2.0.0.0:\n" + "Changed GUI;\n" + "Added text search;\n" + "Added config file;\n" + "Added menu bar;\n\n" + "2.0.0.1:\n" + "Added ReadMe file;\n" + "Added project to the GitHub;\n\n" + "2.0.2.0\n" + "Added advanced serch;");
+        jT_Note.setText(// <editor-fold defaultstate="collapsed" desc="Information">
+                "\t\tCopyright DovgaNik 2018-2019© GitHub:https://github.com/DovgaNik/My-Notes\n\n\t\t\t        Version:2.0.2.0\n" 
+                + "Changelog: \n\n" + "1.0.0.1:\n Added info button;\n\n1.0.1.1:\nFixed bug with 'null';\nFixed bug with lines;\n\n1.0.1.2:\nAdded changelog;\n\n1.0.2.2:\nAdd autoreading;\n\n1.1.0.0:\nWrite and read functions branched into different files in another package;\n\n1.1.0.1:\nAdded printing function;\n\n2.0.0.0:\n" + 
+                "Changed GUI;\n" + "Added text search;\n" + "Added config file;\n" + "Added menu bar;\n\n" + "2.0.0.1:\n" + "Added ReadMe file;\n" + 
+                "Added project to the GitHub;\n\n" + "2.0.2.0\n" + "Added advanced serch;" );
+        //</editor-fold>
     }//GEN-LAST:event_jMI_InfoActionPerformed
 
     private void jMI_Open_ConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMI_Open_ConfigActionPerformed
@@ -294,8 +300,7 @@ public Frame() {
 
     private void jMI_ReadMeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMI_ReadMeActionPerformed
         jL_Out.setText("Loading ReadMe...");
-        jT_Note.setText(
-            // <editor-fold defaultstate="collapsed" desc="ReadMe">                
+        jT_Note.setText(// <editor-fold defaultstate="collapsed" desc="ReadMe">                
     "You can view the whole ReadMe file on https://github.com/DovgaNik/My-Notes\n\n" + "What is this programm for ?\n" +
     "---\n" +
     "This program is a simple and lightweight note taking app written on Java.\n" +
@@ -342,9 +347,8 @@ public Frame() {
     "* Search (to use search enter search phrase into search text area and go to Edit --> Find or Ctrl-F)\n" +
     "* Print (to print text go to Edit --> Print Ctrl-P)\n" +
     "    \n" +
-    ""
+    "" );
 // </editor-fold>
-        );
     }//GEN-LAST:event_jMI_ReadMeActionPerformed
     
     public static void main(String args[]) {
@@ -378,6 +382,7 @@ public Frame() {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jL_Out;
     private javax.swing.JLabel jL_Search;
+    private javax.swing.JMenuBar jMB;
     private javax.swing.JMenuItem jMI_Clean;
     private javax.swing.JMenuItem jMI_Find;
     private javax.swing.JMenuItem jMI_Info;
@@ -391,7 +396,6 @@ public Frame() {
     private javax.swing.JMenu jM_File;
     private javax.swing.JMenu jM_Help;
     private javax.swing.JMenu jM_Tools;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jT_Find;
