@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\Users\dovganik\Documents\NetBeansProjects\My-Notes\dist\My_Notes.jar</jar>
+  <outfile>C:\Users\dovganik\Documents\NetBeansProjects\My-Notes\My Note.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Users\dovganik\Documents\NetBeansProjects\My-Notes\src\notepad_orig_YD5_icon.ico</icon>
+  <jre>
+    <path></path>
+    <bundledJre64Bit>false</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion>1.7.0</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+  </jre>
+  <splash>
+    <file>C:\Users\dovganik\Documents\NetBeansProjects\My-Notes\src\splash.bmp</file>
+    <waitForWindow>true</waitForWindow>
+    <timeout>60</timeout>
+    <timeoutErr>true</timeoutErr>
+  </splash>
+  <versionInfo>
+    <fileVersion>2.0.2.0</fileVersion>
+    <txtFileVersion>latest</txtFileVersion>
+    <fileDescription>Lightweight note taking app</fileDescription>
+    <copyright>GNU GPL v3</copyright>
+    <productVersion>2.0.2.0</productVersion>
+    <txtProductVersion>latest</txtProductVersion>
+    <productName>Lightweight note taking app</productName>
+    <companyName>School N1 Izmail</companyName>
+    <internalName>notes</internalName>
+    <originalFilename>My Note.exe</originalFilename>
+    <trademarks></trademarks>
+    <language>ENGLISH_US</language>
+  </versionInfo>
+</launch4jConfig>
