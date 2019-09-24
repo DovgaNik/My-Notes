@@ -186,7 +186,7 @@
     <Component class="javax.swing.JLabel" name="jL_Out">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Notepad.png"/>
+          <Image iconType="3" name="/img/ico/Notepad.png"/>
         </Property>
       </Properties>
     </Component>
@@ -197,7 +197,7 @@
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Find.png"/>
+          <Image iconType="3" name="/img/ico/Find.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Search and config area"/>
         <Property name="name" type="java.lang.String" value="" noResource="true"/>

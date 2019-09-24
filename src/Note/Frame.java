@@ -6,6 +6,7 @@ package Note;
 import File_operations.*;
 import org.ini4j.*;
 import java.io.*;
+import javax.swing.ImageIcon;
 
 public class Frame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="File operations objects">
@@ -62,11 +63,11 @@ public Frame() {
         setName("Note"); // NOI18N
         setResizable(false);
 
-        jL_Out.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Notepad.png"))); // NOI18N
+        jL_Out.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ico/Notepad.png"))); // NOI18N
 
         jL_Search.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jL_Search.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jL_Search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Find.png"))); // NOI18N
+        jL_Search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ico/Find.png"))); // NOI18N
         jL_Search.setText("Search and config area");
         jL_Search.setName(""); // NOI18N
 
