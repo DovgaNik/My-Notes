@@ -1,0 +1,4 @@
+[My_Note]
+	file_name = note
+	auto_read = true
+	encrypt = true

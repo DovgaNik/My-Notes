@@ -12,6 +12,7 @@ public class Frame extends javax.swing.JFrame {
     file_read reader = new file_read();
     file_write writer = new file_write();
     file_print printer = new file_print();
+    passwordFrame enterPass = new passwordFrame();
     // </editor-fold> 
     // <editor-fold defaultstate="collapsed" desc="Configuration variables">
     String config_file = // <editor-fold defaultstate="collapsed" desc="Default config file">        
@@ -30,6 +31,9 @@ public class Frame extends javax.swing.JFrame {
 public Frame() {
         initComponents();
         sets();
+        if(encrypt){
+            enterPass.displayPasswordFrame(encrypt);
+        }
         if(auto_read){
             read(false);
         }
@@ -220,6 +224,7 @@ public Frame() {
             Wini config = new Wini(new File(config_file_name)); //config file name
             note_file_name = config.get("My_Note", "file_name", String.class);
             auto_read = config.get("My_Note", "auto_read", boolean.class);
+            encrypt = config.get("My_Note", "encrypt", boolean.class);
         }catch(IOException ex){
             jL_Out.setText("Config reading error!!!! (IOException) :-(");
         }
