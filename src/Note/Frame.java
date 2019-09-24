@@ -6,7 +6,6 @@ package Note;
 import File_operations.*;
 import org.ini4j.*;
 import java.io.*;
-import javax.swing.ImageIcon;
 
 public class Frame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="File operations objects">
@@ -103,7 +102,7 @@ public Frame() {
 
         jM_Edit.setText("Edit");
 
-        jMI_Clean.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        jMI_Clean.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
         jMI_Clean.setText("Clean");
         jMI_Clean.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -281,11 +280,17 @@ public Frame() {
     private void jMI_InfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMI_InfoActionPerformed
         //Info
         jL_Out.setText("Loading information...");
+//        jT_Note.setText(// <editor-fold defaultstate="collapsed" desc="Information">
+//                "\t\tCopyright DovgaNik 2018-2019© GitHub:https://github.com/DovgaNik/My-Notes\n\n\t\t\t        Version:2.0.2.0\n" 
+//                + "Changelog: \n\n" + "1.0.0.1:\n Added info button;\n\n1.0.1.1:\nFixed bug with 'null';\nFixed bug with lines;\n\n1.0.1.2:\nAdded changelog;\n\n1.0.2.2:\nAdd autoreading;\n\n1.1.0.0:\nWrite and read functions branched into different files in another package;\n\n1.1.0.1:\nAdded printing function;\n\n2.0.0.0:\n" + 
+//                "Changed GUI;\n" + "Added text search;\n" + "Added config file;\n" + "Added menu bar;\n\n" + "2.0.0.1:\n" + "Added ReadMe file;\n" + 
+//                "Added project to the GitHub;\n\n" + "2.0.2.0\n" + "Added advanced serch;" + "\n\n2.0.3.0\nAdded resizing of the window;\nAdded location by platform;" );
+//        //</editor-fold>
         jT_Note.setText(// <editor-fold defaultstate="collapsed" desc="Information">
-                "\t\tCopyright DovgaNik 2018-2019© GitHub:https://github.com/DovgaNik/My-Notes\n\n\t\t\t        Version:2.0.2.0\n" 
+                "\t\tCopyright DovgaNik 2018-2019© GitHub:https://github.com/DovgaNik/My-Notes\n\n\t\t\t        Version:2.0.3.1\n" 
                 + "Changelog: \n\n" + "1.0.0.1:\n Added info button;\n\n1.0.1.1:\nFixed bug with 'null';\nFixed bug with lines;\n\n1.0.1.2:\nAdded changelog;\n\n1.0.2.2:\nAdd autoreading;\n\n1.1.0.0:\nWrite and read functions branched into different files in another package;\n\n1.1.0.1:\nAdded printing function;\n\n2.0.0.0:\n" + 
                 "Changed GUI;\n" + "Added text search;\n" + "Added config file;\n" + "Added menu bar;\n\n" + "2.0.0.1:\n" + "Added ReadMe file;\n" + 
-                "Added project to the GitHub;\n\n" + "2.0.2.0\n" + "Added advanced serch;" + "\n\n2.0.3.0\nAdded resizing of the window;\nAdded location by platform;" );
+                "Added project to the GitHub;\n\n" + "2.0.2.0:\n" + "Added advanced serch;" + "\n\n2.0.3.0:\nAdded resizing of the window;\nAdded location by platform;" + "\n\n2.0.3.1:\nFixed bug with Ctrl-C buttons combination;");
         //</editor-fold>
     }//GEN-LAST:event_jMI_InfoActionPerformed
 
@@ -326,7 +331,7 @@ public Frame() {
     "        * Read (Ctrl-O)\n" +
     "        * Write (Ctrl-S)\n" +
     "    * Edit\n" +
-    "        * Clean (Ctrl-C)\n" +
+    "        * Clean (Ctrl-B)\n" +
     "        * Find (Ctrl-F)\n" +
     "        * Print (Ctrl-P)\n" +
     "    * Tools\n" +

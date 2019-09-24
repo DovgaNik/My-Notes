@@ -25,7 +25,7 @@ There are:
         * Read (Ctrl-O)
         * Write (Ctrl-S)
     * Edit
-        * Clean (Ctrl-C)
+        * Clean (Ctrl-B)
         * Find (Ctrl-F)
         * Print (Ctrl-P)
     * Tools
