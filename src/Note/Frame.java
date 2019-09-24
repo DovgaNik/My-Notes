@@ -285,7 +285,7 @@ public Frame() {
                 "\t\tCopyright DovgaNik 2018-2019© GitHub:https://github.com/DovgaNik/My-Notes\n\n\t\t\t        Version:2.0.2.0\n" 
                 + "Changelog: \n\n" + "1.0.0.1:\n Added info button;\n\n1.0.1.1:\nFixed bug with 'null';\nFixed bug with lines;\n\n1.0.1.2:\nAdded changelog;\n\n1.0.2.2:\nAdd autoreading;\n\n1.1.0.0:\nWrite and read functions branched into different files in another package;\n\n1.1.0.1:\nAdded printing function;\n\n2.0.0.0:\n" + 
                 "Changed GUI;\n" + "Added text search;\n" + "Added config file;\n" + "Added menu bar;\n\n" + "2.0.0.1:\n" + "Added ReadMe file;\n" + 
-                "Added project to the GitHub;\n\n" + "2.0.2.0\n" + "Added advanced serch;" );
+                "Added project to the GitHub;\n\n" + "2.0.2.0\n" + "Added advanced serch;" + "\n\n2.0.3.0\nAdded resizing of the window;\nAdded location by platform;" );
         //</editor-fold>
     }//GEN-LAST:event_jMI_InfoActionPerformed
 
