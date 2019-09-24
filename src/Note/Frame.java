@@ -60,8 +60,8 @@ public Frame() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Note");
+        setLocationByPlatform(true);
         setName("Note"); // NOI18N
-        setResizable(false);
 
         jL_Out.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ico/Notepad.png"))); // NOI18N
 
