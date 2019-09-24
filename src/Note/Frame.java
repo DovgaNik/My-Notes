@@ -16,12 +16,15 @@ public class Frame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Configuration variables">
     String config_file = // <editor-fold defaultstate="collapsed" desc="Default config file">        
             "[My_Note]\n" +
-"file_name = note\n" +
-"auto_read = true";
+"\tfile_name = note\n" +
+"\tauto_read = true\n" + 
+"\tencrypt = false";
     // </editor-fold>
     String config_file_name = "config"; //config file name
     String note_file_name; 
     boolean auto_read;
+    boolean encrypt;
+    String password;
     // </editor-fold>
     
 public Frame() {
