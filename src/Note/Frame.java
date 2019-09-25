@@ -227,6 +227,9 @@ public Frame() {
     
     void checkPass(){
         jT_Find.setText("Plese enter your password\nin next line:\n");
+        jMI_Write.setEnabled(false);
+        jMI_Read.setEnabled(false);
+        auto_read = false;
     }
     
     void sets(){
@@ -253,13 +256,23 @@ public Frame() {
         if(message){
             jL_Out.setText("Reading from file...");
         }
-        if(reader.read(note_file_name) == "1"){
-            jL_Out.setText("Reading error!!!! (File not found) :-(");
-        }else{if(reader.read(note_file_name) == "2"){
-            jL_Out.setText("Reading error!!!! (IOException) :-(");
+        if(encrypt){
+            if(reader.read(note_file_name) == "1"){
+                jL_Out.setText("Reading error!!!! (File not found) :-(");
+            }else{if(reader.read(note_file_name) == "2"){
+                jL_Out.setText("Reading error!!!! (IOException) :-(");
+            }else{
+                jT_Note.setText(AES.decrypt(reader.read(note_file_name), password));
+            }}
         }else{
-            jT_Note.setText(reader.read(note_file_name));
-        }}
+            if(reader.read(note_file_name) == "1"){
+                jL_Out.setText("Reading error!!!! (File not found) :-(");
+            }else{if(reader.read(note_file_name) == "2"){
+                jL_Out.setText("Reading error!!!! (IOException) :-(");
+            }else{
+                jT_Note.setText(reader.read(note_file_name));
+            }}
+        }
     }
     
     private void jMI_ReadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMI_ReadActionPerformed
@@ -387,6 +400,11 @@ public Frame() {
     private void jMI_Check_PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMI_Check_PasswordActionPerformed
         String [] passLines = jT_Find.getText().split("\n");
         password = passLines[2];
+        
+        jMI_Write.setEnabled(false);
+        jMI_Read.setEnabled(false);
+        
+        read(false);
     }//GEN-LAST:event_jMI_Check_PasswordActionPerformed
     
     public static void main(String args[]) {
