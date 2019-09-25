@@ -8,11 +8,13 @@ import org.ini4j.*;
 import java.io.*;
 
 public class Frame extends javax.swing.JFrame {
+    
+    int posX=0,posY=0;
+    private String pass;
     // <editor-fold defaultstate="collapsed" desc="File operations objects">
     file_read reader = new file_read();
     file_write writer = new file_write();
     file_print printer = new file_print();
-    passwordFrame enterPass = new passwordFrame();
     // </editor-fold> 
     // <editor-fold defaultstate="collapsed" desc="Configuration variables">
     String config_file = // <editor-fold defaultstate="collapsed" desc="Default config file">        
@@ -32,7 +34,7 @@ public Frame() {
         initComponents();
         sets();
         if(encrypt){
-            enterPass.displayPasswordFrame(encrypt);
+            checkPass();
         }
         if(auto_read){
             read(false);
@@ -60,6 +62,7 @@ public Frame() {
         jM_Tools = new javax.swing.JMenu();
         jMI_Open_Config = new javax.swing.JMenuItem();
         jMI_Save_Config = new javax.swing.JMenuItem();
+        jMI_Check_Password = new javax.swing.JMenuItem();
         jM_Help = new javax.swing.JMenu();
         jMI_ReadMe = new javax.swing.JMenuItem();
         jMI_Info = new javax.swing.JMenuItem();
@@ -156,6 +159,14 @@ public Frame() {
         });
         jM_Tools.add(jMI_Save_Config);
 
+        jMI_Check_Password.setText("Check password");
+        jMI_Check_Password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMI_Check_PasswordActionPerformed(evt);
+            }
+        });
+        jM_Tools.add(jMI_Check_Password);
+
         jMB.add(jM_Tools);
 
         jM_Help.setText("Help");
@@ -187,10 +198,12 @@ public Frame() {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 819, Short.MAX_VALUE)
-                .addGap(2, 2, 2)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jL_Search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 811, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jL_Search, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addComponent(jScrollPane2)))
             .addComponent(jL_Out, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -209,6 +222,10 @@ public Frame() {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    void checkPass(){
+        jT_Find.setText("Plese enter your password\nin next line:\n");
+    }
     
     void sets(){
         if(reader.read(config_file_name) != "1"){
@@ -364,6 +381,11 @@ public Frame() {
     "" );
 // </editor-fold>
     }//GEN-LAST:event_jMI_ReadMeActionPerformed
+
+    private void jMI_Check_PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMI_Check_PasswordActionPerformed
+        String [] passLines = jT_Find.getText().split("\n");
+        password = passLines[2];
+    }//GEN-LAST:event_jMI_Check_PasswordActionPerformed
     
     public static void main(String args[]) {
         
@@ -397,6 +419,7 @@ public Frame() {
     private javax.swing.JLabel jL_Out;
     private javax.swing.JLabel jL_Search;
     private javax.swing.JMenuBar jMB;
+    private javax.swing.JMenuItem jMI_Check_Password;
     private javax.swing.JMenuItem jMI_Clean;
     private javax.swing.JMenuItem jMI_Find;
     private javax.swing.JMenuItem jMI_Info;
