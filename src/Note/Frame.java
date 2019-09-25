@@ -4,6 +4,7 @@
 package Note;
 
 import File_operations.*;
+import encrypt.AES;
 import org.ini4j.*;
 import java.io.*;
 
@@ -15,6 +16,7 @@ public class Frame extends javax.swing.JFrame {
     file_read reader = new file_read();
     file_write writer = new file_write();
     file_print printer = new file_print();
+    AES encrypter = new AES();
     // </editor-fold> 
     // <editor-fold defaultstate="collapsed" desc="Configuration variables">
     String config_file = // <editor-fold defaultstate="collapsed" desc="Default config file">        
@@ -274,8 +276,14 @@ public Frame() {
     private void jMI_WriteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMI_WriteActionPerformed
         //Wiriting to file
         jL_Out.setText("Writing to file...");
-        if(writer.write(jT_Note.getText(), note_file_name) == "1"){
-            jL_Out.setText("Writing error!!!! (IOException) :-(");
+        if(!encrypt){
+            if(writer.write(jT_Note.getText(), note_file_name) == "1"){
+                jL_Out.setText("Writing error!!!! (IOException) :-(");
+            }
+        }else{
+            if(writer.write(AES.encrypt(jT_Note.getText(), password), note_file_name) == "1"){
+                jL_Out.setText("Writing error!!!! (IOException) :-(");
+            }
         }
     }//GEN-LAST:event_jMI_WriteActionPerformed
 
@@ -305,12 +313,6 @@ public Frame() {
     private void jMI_InfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMI_InfoActionPerformed
         //Info
         jL_Out.setText("Loading information...");
-//        jT_Note.setText(// <editor-fold defaultstate="collapsed" desc="Information">
-//                "\t\tCopyright DovgaNik 2018-2019© GitHub:https://github.com/DovgaNik/My-Notes\n\n\t\t\t        Version:2.0.2.0\n" 
-//                + "Changelog: \n\n" + "1.0.0.1:\n Added info button;\n\n1.0.1.1:\nFixed bug with 'null';\nFixed bug with lines;\n\n1.0.1.2:\nAdded changelog;\n\n1.0.2.2:\nAdd autoreading;\n\n1.1.0.0:\nWrite and read functions branched into different files in another package;\n\n1.1.0.1:\nAdded printing function;\n\n2.0.0.0:\n" + 
-//                "Changed GUI;\n" + "Added text search;\n" + "Added config file;\n" + "Added menu bar;\n\n" + "2.0.0.1:\n" + "Added ReadMe file;\n" + 
-//                "Added project to the GitHub;\n\n" + "2.0.2.0\n" + "Added advanced serch;" + "\n\n2.0.3.0\nAdded resizing of the window;\nAdded location by platform;" );
-//        //</editor-fold>
         jT_Note.setText(// <editor-fold defaultstate="collapsed" desc="Information">
                 "\t\tCopyright DovgaNik 2018-2019© GitHub:https://github.com/DovgaNik/My-Notes\n\n\t\t\t        Version:2.0.3.1\n" 
                 + "Changelog: \n\n" + "1.0.0.1:\n Added info button;\n\n1.0.1.1:\nFixed bug with 'null';\nFixed bug with lines;\n\n1.0.1.2:\nAdded changelog;\n\n1.0.2.2:\nAdd autoreading;\n\n1.1.0.0:\nWrite and read functions branched into different files in another package;\n\n1.1.0.1:\nAdded printing function;\n\n2.0.0.0:\n" + 
