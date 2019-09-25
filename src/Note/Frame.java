@@ -11,7 +11,6 @@ import java.io.*;
 public class Frame extends javax.swing.JFrame {
     
     int posX=0,posY=0;
-    private String pass;
     // <editor-fold defaultstate="collapsed" desc="File operations objects">
     file_read reader = new file_read();
     file_write writer = new file_write();
@@ -29,6 +28,7 @@ public class Frame extends javax.swing.JFrame {
     String note_file_name; 
     boolean auto_read;
     boolean encrypt;
+    boolean checked;
     String password;
     // </editor-fold>
     
