@@ -65,6 +65,7 @@ public Frame() {
         jMI_Open_Config = new javax.swing.JMenuItem();
         jMI_Save_Config = new javax.swing.JMenuItem();
         jMI_Check_Password = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jM_Help = new javax.swing.JMenu();
         jMI_ReadMe = new javax.swing.JMenuItem();
         jMI_Info = new javax.swing.JMenuItem();
@@ -169,6 +170,14 @@ public Frame() {
         });
         jM_Tools.add(jMI_Check_Password);
 
+        jMenuItem1.setText("jMenuItem1");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jM_Tools.add(jMenuItem1);
+
         jMB.add(jM_Tools);
 
         jM_Help.setText("Help");
@@ -216,8 +225,8 @@ public Frame() {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jL_Search)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jL_Out, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -401,11 +410,18 @@ public Frame() {
         String [] passLines = jT_Find.getText().split("\n");
         password = passLines[2];
         
-        jMI_Write.setEnabled(false);
-        jMI_Read.setEnabled(false);
+        jMI_Write.setEnabled(true);
+        jMI_Read.setEnabled(true);
         
-        read(false);
+       // read(false);
     }//GEN-LAST:event_jMI_Check_PasswordActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        jT_Note.setText(reader.read(note_file_name) + "\n");
+        jT_Note.setText(password + "\n\n");
+        
+        jT_Note.setText(AES.decrypt(reader.read(note_file_name), password));
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
     
     public static void main(String args[]) {
         
@@ -453,6 +469,7 @@ public Frame() {
     private javax.swing.JMenu jM_File;
     private javax.swing.JMenu jM_Help;
     private javax.swing.JMenu jM_Tools;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jT_Find;
