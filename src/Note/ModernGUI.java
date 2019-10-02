@@ -6,6 +6,10 @@ public class ModernGUI extends javax.swing.JFrame {
         initComponents();
     }
 
+    //<editor-fold defaultstate="collapsed" desc="Variables">
+        int posX, posY;
+    //</editor-fold>
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -14,6 +18,16 @@ public class ModernGUI extends javax.swing.JFrame {
         setTitle("My Notes");
         setName("modernFrame"); // NOI18N
         setUndecorated(true);
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                formMouseDragged(evt);
+            }
+        });
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                formMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -28,6 +42,17 @@ public class ModernGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
+       posX=evt.getX();
+       posY=evt.getY(); 
+    }//GEN-LAST:event_formMousePressed
+
+    private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
+       int x=evt.getXOnScreen();
+       int y=evt.getYOnScreen();
+       this.setLocation(x-posX, y-posY);
+    }//GEN-LAST:event_formMouseDragged
 
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
